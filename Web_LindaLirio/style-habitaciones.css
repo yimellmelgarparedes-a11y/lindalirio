@@ -1,0 +1,60 @@
+/* 1. Base y Limpieza */
+* { box-sizing: border-box; }
+body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: #f4f4f9; margin: 0; color: #333; }
+
+/* 2. Header */
+.main-header { background: white; padding: 20px 8%; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #ddd; }
+.logo { font-weight: bold; font-size: 1.4rem; color: #6a4c93; }
+/* Esto obliga a que el buscador y las habitaciones respeten el ancho de la página */
+.main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Ajuste específico para que las tarjetas no se salgan del contenedor */
+.rooms-container {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+/* 3. Layout Principal */
+.page-layout { max-width: 1200px; margin: 20px auto; padding: 0 20px; }
+.search-bar { background: white; padding: 20px; border-radius: 10px; display: flex; gap: 20px; border: 1px solid #ddd; margin-bottom: 30px; align-items: center; }
+
+/* 4. GRID: Aquí solucionamos el problema de "bloques" */
+.rooms-container { display: grid; grid-template-columns: 1fr 320px; gap: 30px; }
+.room-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+
+/* 5. Tarjetas */
+.card { background: white; border: 1px solid #eee; border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; transition: 0.3s; }
+.card:hover { box-shadow: 0 8px 16px rgba(0,0,0,0.1); }
+.img-placeholder { height: 160px; background: #ddd; width: 100%; }
+.content { padding: 15px; flex-grow: 1; }
+.price-info { display: flex; justify-content: space-between; align-items: center; margin: 15px 0; font-size: 0.9rem; }
+.price-info strong { color: #6a4c93; font-size: 1.1rem; }
+
+/* 6. Botones */
+.btns { display: flex; gap: 8px; margin-top: 10px; }
+.btn-prim { background: #6a4c93; color: white; border: none; padding: 10px; border-radius: 6px; flex: 1; cursor: pointer; }
+.btn-sec { background: transparent; border: 1px solid #6a4c93; color: #6a4c93; padding: 10px; border-radius: 6px; flex: 1; cursor: pointer; }
+
+/* 7. Sidebar */
+.sidebar { display: flex; flex-direction: column; gap: 20px; }
+.box { background: white; padding: 20px; border: 1px solid #eee; border-radius: 12px; }
+/* Esto obliga a que el buscador y las habitaciones respeten el ancho de la página */
+.main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+:root { --color-lirio: #9b72aa; --color-blanco: #ffffff; --color-arena: #fcfbf8; }
+body { font-family: 'Segoe UI', sans-serif; margin: 0; background-color: var(--color-arena); color: #333; }
+.navbar { display: flex; justify-content: space-between; align-items: center; padding: 20px 8%; background: var(--color-blanco); box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+.nav-links a { text-decoration: none; color: #333; margin: 0 15px; font-weight: bold; }
+.contenido { padding: 50px 8%; }
+h1, h2 { color: var(--color-lirio); }
+table { width: 100%; border-collapse: collapse; background: white; border-radius: 10px; overflow: hidden; }
+th, td { padding: 15px; text-align: left; border-bottom: 1px solid #eee; }
