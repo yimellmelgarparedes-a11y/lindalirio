@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Habitaciones | Linda Lirio</title>
+    <link rel="stylesheet" href="style-habitaciones.css">
+</head>
+<body>
+
+   <header class="navbar">
+        <div class="logo">LINDA LIRIO</div>
+        <nav class="nav-links">
+            <a href="index.html">Inicio</a>
+            <a href="habitaciones.html">Habitaciones</a>
+            <a href="nosotros.html">Nosotros</a>
+            <a href="contacto.html">Contacto</a>
+        </nav>
+    </header>
+
+    <div class="page-layout">
+        <div class="hero-section">
+            <h1>Nuestras Habitaciones</h1>
+            <p>Encuentra la habitación perfecta para tu estadía</p>
+        </div>
+            <div class="search-bar">
+    <div>
+        📅 Entrada: 
+        <select id="day-in"></select>
+        <select id="month-in"></select>
+        <select id="year-in"></select>
+    </div>
+    <div>
+        📅 Salida: 
+        <select id="day-out"></select>
+        <select id="month-out"></select>
+        <select id="year-out"></select>
+    </div>
+    <button class="btn-search" onclick="actualizarResumen()">Buscar disponibilidad</button>
+</div>
+        <div class="rooms-container">
+            <div class="room-grid">
+                <!-- Tarjetas -->
+                <div class="card">
+                    <div class="img-placeholder"></div>
+                    <div class="content">
+                        <h3>Individual</h3>
+                        <p>Ideal para una persona que busca comodidad y tranquilidad.</p>
+                        <div class="price-info"><span>4 disponibles</span> <strong>Desde S/ 90</strong></div>
+                       <div class="btns">
+    <button class="btn-sec" onclick="window.location.href='detalle.html?hab=Individual'">Ver detalles</button>
+    <button class="btn-prim" onclick="alert('Redirigiendo al sistema de reserva para Individual...')">Reservar</button>
+</div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="img-placeholder"></div>
+                    <div class="content">
+                        <h3>Matrimonial</h3>
+                        <p>Perfecta para parejas que desean descanso y confort.</p>
+                        <div class="price-info"><span>5 disponibles</span> <strong>Desde S/ 150</strong></div>
+                        <div class="btns">
+    <button class="btn-sec" onclick="window.location.href='detalle.html?hab=Matrimonial'">Ver detalles</button>
+    <button class="btn-prim" onclick="alert('Redirigiendo al sistema de reserva para Matrimonial...')">Reservar</button>
+</div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="img-placeholder"></div>
+                    <div class="content">
+                        <h3>Doble</h3>
+                        <p>Ideal para amigos o familiares que viajan juntos.</p>
+                        <div class="price-info"><span>6 disponibles</span> <strong>Desde S/ 180</strong></div>
+                        <div class="btns">
+    <button class="btn-sec" onclick="window.location.href='detalle.html?hab=Doble'">Ver detalles</button>
+    <button class="btn-prim" onclick="alert('Redirigiendo al sistema de reserva para Doble...')">Reservar</button>
+</div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="img-placeholder"></div>
+                    <div class="content">
+                        <h3>Triple</h3>
+                        <p>Espaciosa y cómoda para 3 personas.</p>
+                        <div class="price-info"><span>3 disponibles</span> <strong>Desde S/ 220</strong></div>
+                        <div class="btns">
+    <button class="btn-sec" onclick="window.location.href='detalle.html?hab=Triple'">Ver detalles</button>
+    <button class="btn-prim" onclick="alert('Redirigiendo al sistema de reserva para Triple...')">Reservar</button>
+</div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="img-placeholder"></div>
+                    <div class="content">
+                        <h3>Cuádruple</h3>
+                        <p>Amplia habitación perfecta para grupos o familias.</p>
+                        <div class="price-info"><span>2 disponibles</span> <strong>Desde S/ 250</strong></div>
+                       <div class="btns">
+    <button class="btn-sec" onclick="window.location.href='detalle.html?hab=Cuádruple'">Ver detalles</button>
+    <button class="btn-prim" onclick="alert('Redirigiendo al sistema de reserva para Cuádruple...')">Reservar</button>
+</div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="img-placeholder"></div>
+                    <div class="content">
+                        <h3>Familiar (5 personas)</h3>
+                        <p>La mejor opción para familias grandes o grupos.</p>
+                        <div class="price-info"><span>1 disponible</span> <strong>Desde S/ 320</strong></div>
+                       <div class="btns">
+    <button class="btn-sec" onclick="window.location.href='detalle.html?hab=Familiar'">Ver detalles</button>
+    <button class="btn-prim" onclick="alert('Redirigiendo al sistema de reserva para Familiar...')">Reservar</button>
+</div>
+                    </div>
+                </div>
+            </div>
+
+            <aside class="sidebar">
+                <div class="box"><h3>Resumen de búsqueda</h3>Datos aquí...</div>
+                <div class="box"><h3>¿Por qué reservar?</h3>Beneficios aquí...</div>
+                <div class="box"><h3>Oferta especial</h3>Descuento...</div>
+                <div class="box"><h3>¿Necesitas ayuda?</h3>WhatsApp: +51 999 999 999</div>
+            </aside>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    // Seleccionamos todos los botones de reserva y detalle
+    document.querySelectorAll('.btn-prim').forEach(button => {
+        button.addEventListener('click', function() {
+            const roomName = this.closest('.card').querySelector('h3').innerText;
+            alert('¡Excelente elección! Has seleccionado la habitación: ' + roomName + '. Abriendo sistema de reserva...');
+            // Aquí luego vincularemos el enlace de pago o formulario
+        });
+    });
+
+    document.querySelectorAll('.btn-sec').forEach(button => {
+        button.addEventListener('click', function() {
+            const roomName = this.closest('.card').querySelector('h3').innerText;
+            console.log('Mostrando detalles para: ' + roomName);
+            // Aquí abriremos un modal o una nueva ventana con los detalles
+        });
+    });
+</script>
+<script>
+    // 1. Llenar selectores de fecha
+    const months = ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"];
+    const currentYear = new Date().getFullYear();
+
+    function populateDate(dayId, monthId, yearId) {
+        const d = document.getElementById(dayId);
+        const m = document.getElementById(monthId);
+        const y = document.getElementById(yearId);
+        
+        for(let i=1; i<=31; i++) d.add(new Option(i, i));
+        months.forEach((mName, i) => m.add(new Option(mName, i)));
+        for(let i=0; i<3; i++) y.add(new Option(currentYear + i, currentYear + i));
+    }
+    
+    populateDate('day-in', 'month-in', 'year-in');
+    populateDate('day-out', 'month-out', 'year-out');
+
+    // 2. Funcionalidad de Búsqueda y Precios
+    function actualizarResumen() {
+        const monthIn = parseInt(document.getElementById('month-in').value);
+        
+        // Lógica de precios: Temporada Alta (Verano: Dic=11, Ene=0, Feb=1)
+        const isHighSeason = [11, 0, 1].includes(monthIn);
+        const multiplier = isHighSeason ? 1.5 : 1.0;
+
+        // Actualizar precios en tarjetas
+        const preciosBase = [90, 150, 180, 220, 250, 320];
+        const strongs = document.querySelectorAll('.price-info strong');
+        
+        strongs.forEach((el, index) => {
+            const nuevoPrecio = Math.round(preciosBase[index] * multiplier);
+            el.innerText = `Desde S/ ${nuevoPrecio}`;
+        });
+
+        // Actualizar Resumen en Sidebar
+        const resumen = document.querySelector('.sidebar .box');
+        resumen.innerHTML = `<h3>Resumen</h3>
+            <p>Entrada: ${document.getElementById('day-in').value}/${monthIn+1}</p>
+            <p>Salida: ${document.getElementById('day-out').value}/${parseInt(document.getElementById('month-out').value)+1}</p>
+            <p><strong>Temporada: ${isHighSeason ? 'Alta' : 'Baja'}</strong></p>`;
+    }
+</script>
