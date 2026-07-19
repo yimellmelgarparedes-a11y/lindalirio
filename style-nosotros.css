@@ -1,0 +1,32 @@
+/* --- Estilos Mejorados para Linda Lirio --- */
+body { font-family: 'Segoe UI', Tahoma, sans-serif; margin: 0; background-color: #fafafa; color: #333; }
+
+/* Navbar ajustada */
+.navbar { background: white; padding: 20px 8%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+.logo { font-weight: bold; color: #6a4c93; font-size: 1.5rem; }
+.nav-links a { text-decoration: none; color: #333; margin: 0 15px; font-weight: bold; }
+
+.nosotros-container { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
+
+/* Hero Section */
+.hero { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; margin-bottom: 80px; }
+.hero h1 { font-size: 3rem; color: #2d2d2d; margin-bottom: 20px; }
+.hero p { font-size: 1.1rem; line-height: 1.6; color: #555; }
+.img-placeholder { height: 350px; background: #ddd; border-radius: 20px; }
+
+/* Beneficios */
+.beneficios h2 { text-align: center; margin-bottom: 40px; font-size: 2rem; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-bottom: 80px; }
+
+/* Tarjetas y Estilo Visual */
+.card { background: white; padding: 40px; border-radius: 16px; border: 1px solid #eee; transition: transform 0.3s; }
+.card h3 { color: #6a4c93; margin-top: 0; }
+.info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+
+.btn-primary { background: #6a4c93; color: white; border: none; padding: 15px 30px; border-radius: 8px; cursor: pointer; font-size: 1rem; margin-top: 20px; }
+
+/* Responsivo */
+@media (max-width: 850px) {
+    .hero, .grid-3, .info-grid { grid-template-columns: 1fr !important; text-align: center; }
+    .hero h1 { font-size: 2rem; }
+}

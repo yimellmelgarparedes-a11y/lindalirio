@@ -1,0 +1,37 @@
+:root { --color-lirio: #9b72aa; --color-blanco: #ffffff; --color-arena: #fcfbf8; }
+body { font-family: 'Segoe UI', sans-serif; margin: 0; background-color: var(--color-arena); color: #333; }
+.navbar { display: flex; justify-content: space-between; align-items: center; padding: 20px 8%; background: var(--color-blanco); box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+.nav-links a { text-decoration: none; color: #333; margin: 0 15px; font-weight: bold; }
+.contenido { padding: 50px 8%; }
+h1, h2 { color: var(--color-lirio); }
+table { width: 100%; border-collapse: collapse; background: white; border-radius: 10px; overflow: hidden; }
+th, td { padding: 15px; text-align: left; border-bottom: 1px solid #eee; }
+/* Ajustes para dispositivos móviles */
+@media (max-width: 850px) {
+    /* 1. Ordena el menú para que no se amontone */
+    .main-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    /* 2. Convierte las tarjetas de habitaciones en una lista vertical */
+    .rooms-container {
+        grid-template-columns: 1fr !important; /* Fuerza una sola columna */
+        gap: 20px;
+    }
+
+    /* 3. Ajusta el ancho de las tarjetas */
+    .room-card {
+        width: 100%;
+        max-width: 400px; /* Para que no se estiren demasiado */
+        margin: 0 auto;   /* Centra la tarjeta */
+    }
+
+    /* 4. Asegura que los botones sean fáciles de tocar */
+    .btns {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+}
